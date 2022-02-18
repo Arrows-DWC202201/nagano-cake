@@ -3,6 +3,7 @@
     <%= link_to root_path, class: "navbar-brand" do %><i class="fas fa-birthday-cake"></i>ながのCAKE<%end%>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
+
         <!--会員がログインしているとき-->
         <% if customer_signed_in? %>
           <li>
@@ -20,6 +21,7 @@
           <li>
             <%= link_to "ログアウト", destroy_customer_session_path, method: :destroy %>
           </li>
+
         <!--管理者がログインしているとき-->
         <% elsif admin_signed_in? %>
           <li>
@@ -37,6 +39,7 @@
           <li>
             <%= link_to "ログアウト", destroy_admin_session_path, method: :destroy %>
           </li>
+
         <!--ログインしていないとき-->
         <% else %>
           <li>
@@ -54,6 +57,7 @@
           <li>
             <%= link_to new_customer_session_path do %>ログイン<% end %>
           </li>
+
         <% end %>
       </ul>
     </div>
