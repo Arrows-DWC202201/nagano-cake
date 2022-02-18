@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :order_items, only:[:update]
   end
 
-  # # 会員側のルーティング設定
+  # 会員側のルーティング設定
   devise_for :customers,skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
