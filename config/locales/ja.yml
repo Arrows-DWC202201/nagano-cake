@@ -4,3 +4,10 @@
         #[カラム名]:
           #[enumで番号と紐付けた要素]
           #[enumで番号と紐付けた要素]: 要素の数だけ追加する
+
+  ja:
+    enums:
+      order:
+        payment_method:
+          credit_card: "クレジットカード"
+          transfer: "銀行振込"
