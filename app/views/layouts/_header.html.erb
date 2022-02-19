@@ -7,7 +7,7 @@
         <!--会員がログインしているとき-->
         <% if customer_signed_in? %>
           <li>
-            ようこそ、〇〇さん！
+            ようこそ、<%= current_customer.last_name %>さん！
           </li>
           <li>
             <%= link_to "マイページ", customers_path %>
