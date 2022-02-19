@@ -32,10 +32,7 @@
     <div class="form-group row mt-3">
       <div class="col-4"><%= f.label :販売ステータス %></div>
       <div class="col-8">
-        <%= f.radio_button :is_active, :true %>
-        <%= f.label :is_active, "販売中" %>
-        <%= f.radio_button :is_active, :false, class: "ml-3" %>
-        <%= f.label :is_active, "販売停止中" %>
+        <%= f.collection_radio_buttons :is_active, Item.is_actives_i18n, :first , :last %>
       </div>
     </div>
 

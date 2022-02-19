@@ -1,8 +1,10 @@
 class Admin::ItemsController < ApplicationController
 
+  # before_action :authenticate_admin!
+  # 管理者ログイン/ログアウト作成後使用
+
   def index
-    # @items = Item.all
-    @items = Item.page(params[:page]).per(10)
+    @items = Item.page(params[:page]).per(5)
   end
 
   def show
@@ -39,7 +41,7 @@ class Admin::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:genre_id, :name, :introduction, :price, :imaage_id, :is_active)
+    params.require(:item).permit(:genre_id, :name, :introduction, :price, :image, :is_active)
   end
 
 end

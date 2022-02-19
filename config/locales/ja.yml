@@ -11,3 +11,8 @@
         payment_method:
           credit_card: "クレジットカード"
           transfer: "銀行振込"
+
+      item:
+        is_active:
+          sale: "販売中"
+          sold: "販売停止中"
