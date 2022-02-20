@@ -4,8 +4,6 @@ class Item < ApplicationRecord
 
   attachment :image
 
-  # validates :is_active, inclusion: [true, false]
-
   enum is_active: { sale: true, sold: false }
 
   def with_tax_price
