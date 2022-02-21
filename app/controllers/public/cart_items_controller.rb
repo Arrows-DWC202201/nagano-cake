@@ -9,12 +9,12 @@ class Public::CartItemsController < ApplicationController
     if @cart_item.present?
       @cart_item.quantity += params[:quantity].to_i
     else
-      @cart_item = CartItem.new(cart_item_params)
+      @cart_item = current_customer.carts_items.new.new(cart_item_params)
     end
 
 
     @cart_item.save
-    redirect_to items_path
+    redirect_to request.referer
   end
 
   def update
@@ -31,6 +31,7 @@ class Public::CartItemsController < ApplicationController
 
   def all_destroy
     current_customer.cart_items.destroy_all
+    redirect_to cart_items_path
   end
 
   private

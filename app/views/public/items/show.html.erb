@@ -4,9 +4,16 @@
   <p><%= @item.introduction %></p>
   <p>¥<%= @item.with_tax_price.to_s(:delimited) %>(税込)</p>
 
-  <% form_with model: @cart_item do |f| %>
-    <%= f.hidden_field :item_id, value => @item.id %>
-    <%= f.select_field :quantity, [*1..10], include_blank: "個数選択" %>
-    <%= f.submit "カートに入れる" %>
-  <% end %>
+  <div>
+  <% if customer_signed_in? %>
+    <% if @item.is_active? %>
+      <% form_with model: @cart_item do |f| %>
+        <%= f.hidden_field :item_id, value => @item.id %>
+        <%= f.select_field :quantity, [*1..10], include_blank: "個数選択" %>
+        <%= f.submit "カートに入れる" %>
+      <% end %>
+    <% else %>
+      <div><%= @item.is_active_i18n %></div>
+    <% end %>
+  </div>
 </div>
