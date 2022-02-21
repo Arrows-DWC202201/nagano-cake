@@ -18,8 +18,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "homes#top"
     get "/about", to: "homes#about"
-    patch "/customers/update" => 'customers#update', as: :update_customers
-    resource :customers, only:[:show, :edit] do
+    resource :customers, only:[:show, :edit, :update] do
       collection do
         get "quit"
         patch "out"
