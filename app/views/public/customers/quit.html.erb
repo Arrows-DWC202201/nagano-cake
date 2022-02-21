@@ -10,8 +10,8 @@
     </p>
   </div>
   <div class="row justify-content-center">
-    <%= link_to "退会しない", customers_path(@customer), class: "btn btn-primary"%>
-    <%= link_to "退会する", out_customers_path(@customer), method: :patch, params: { is_active: :false }, class: "btn btn-danger"%>
+    <%= link_to "退会しない", customers_path, class: "btn btn-primary"%>
+    <%= link_to "退会する", out_customers_path, method: :patch, params: { is_active: :false }, class: "btn btn-danger"%>
   </div>
 
 </div>
