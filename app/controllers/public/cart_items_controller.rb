@@ -38,7 +38,7 @@ class Public::CartItemsController < ApplicationController
 
   def all_destroy
     @cart_items = current_customer.cart_items.all
-    @cart_items.all_destroy
+    @cart_items.destroy_all
     redirect_to cart_items_path, notice: '全ての商品を削除しました'
   end
 
