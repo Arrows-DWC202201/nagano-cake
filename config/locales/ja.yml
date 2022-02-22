@@ -27,3 +27,10 @@
         is_active:
           active: "有効"
           out: "退会"
+
+      order_item:
+        make_status:
+          impossible: "着手不可"
+          waiting: "製作待ち"
+          making: "製作中"
+          finish: "製作完了"
