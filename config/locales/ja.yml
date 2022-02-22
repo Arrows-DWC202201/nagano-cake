@@ -22,3 +22,8 @@
         is_active:
           sale: "販売中"
           sold: "販売停止中"
+
+      customer:
+        is_active:
+          active: "有効"
+          out: "退会"
