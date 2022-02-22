@@ -26,24 +26,29 @@ class Public::CartItemsController < ApplicationController
 
   def update
     @cart_item = CartItem.find(params[:id])
-    @cart_item.update(cart_item_params)
-    redirect_to cart_item_path
+    @cart_item.update(cart_item_update_params)
+    redirect_to cart_items_path, notice: '数量を変更しました'
   end
 
   def destroy
     @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
-    redirect_to cart_items_path
+    redirect_to cart_items_path, notice: '商品を削除しました'
   end
 
   def all_destroy
-    current_customer.cart_items.destroy_all
-    redirect_to cart_items_path
+    @cart_items = current_customer.cart_items.all
+    @cart_items.all_destroy
+    redirect_to cart_items_path, notice: '全ての商品を削除しました'
   end
 
   private
 
   def cart_item_params
     params.permit(:item_id, :quantity)
+  end
+
+  def cart_item_update_params
+    params.require(:cart_item).permit(:item_id,:quantity)
   end
 end
