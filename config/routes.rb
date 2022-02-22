@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resources :order_items, only:[:update]
   end
 
+  devise_scope :admin do
+    get '/admin/sign_out' => 'devise/sessions#destroy'
+  end
+
   # 会員側のルーティング設定
 
   scope module: :public do
