@@ -1,7 +1,6 @@
 class Admin::OrdersController < ApplicationController
 
-  # before_action :authenticate_admin!
-  # 管理者ログイン/ログアウト作成後使用
+  before_action :authenticate_admin!
 
   def index
     # @orders = Order.all.order(created_at: :desc).page(params[:page]).per(10)
@@ -14,7 +13,9 @@ class Admin::OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    @order.update(order_params)
+    if @order.update(order_params)
+      flash[:notice] = "注文ステータスの更新に成功しました"
+    end
     redirect_to admin_order_path(@order)
   end
 

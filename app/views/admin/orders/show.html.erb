@@ -51,15 +51,15 @@
           </tr>
         </thead>
         <tbody>
-          <% @order.order_items.each do |order_item| %>
+          <% @order.order_items.each do |order_items| %>
             <tr>
-              <td><%= order_item.item.name %></td>
-              <td><%= order_item.tax_price %></td>
-              <td><%= order_item.quantity %></td>
-              <td><%= order_item.subtotal %></td>
-              <%= form_with model:[:admin, order_item], local: true do |f| %>
+              <td><%= order_items.item.name %></td>
+              <td><%= order_items.tax_price %></td>
+              <td><%= order_items.quantity %></td>
+              <td><%= order_items.subtotal %></td>
+              <%= form_with model:[:admin, order_items], local: true do |f| %>
               <!-- モデルをもとにセレクトボックスを生成-->
-                <td><%= f.collection_select(:make_status, OrderItem.make_statuses_i18n, :first, :last,  { selected: order_item.make_status }, {class: "form-control"})%></td>
+                <td><%= f.collection_select(:make_status, OrderItem.make_statuses_i18n, :first, :last,  { selected: order_items.make_status }, {class: "form-control"})%></td>
                 <td><%= f.submit "更新",  class:"btn btn-success" %></td>
               <% end %>
             </tr>
