@@ -7,12 +7,12 @@ class OrderItem < ApplicationRecord
 
   enum make_status: {
     impossible: 0,
-    wating:     1,
+    waiting:    1,
     making:     2,
     finish:     3
   }
 
-  def sum_of_price
+  def subtotal
     (self.tax_price * self.quantity).round
   end
 
@@ -27,5 +27,5 @@ class OrderItem < ApplicationRecord
       end
     end
   end
-  
+
 end

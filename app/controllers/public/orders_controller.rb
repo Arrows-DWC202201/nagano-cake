@@ -1,7 +1,31 @@
 class Public::OrdersController < ApplicationController
+
+  # before_action :authenticate_customer!
+  # 管理者ログイン機能実装後使用
+
   def new
     @order = current_customer.orders.new
     @address = Address.new
+  end
+
+  def create
+    cart_items = current_customer.cart_items.all
+    @order = current_customer.orders.new(order_params)
+    if @order.save
+      cart_items.each do |cart_item|
+        order_item = OrderItem.new
+        order_item.item_id = cart_item.item_id
+        order_item.order_id = @order.id
+        order_item.quantity = cart_item.quantity
+        order_item.tax_price = cart_item.item.price
+        order_item.save
+      end
+      redirect_to thanks_orders_path
+      cart_items.destroy_all
+    else
+      @order = Order.new(order_params)
+      render :new
+    end
   end
 
   def index
@@ -10,6 +34,7 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = current_customer.orders.find(params[:id])
+    @order_items = @order.order_items
     @order.carriage = 800
   end
 
@@ -29,22 +54,16 @@ class Public::OrdersController < ApplicationController
     when 2
       current_customer.addresses.find(params[:address_id])
     when 3
-      @address = current_customer.addresses.new(address_params)
-      unless @address.save
-        flash[:alert] = '住所が正しくありません'
+      @delivery = current_customer.addresses.new(address_params)
+      unless @delivery.save
         render :new
         return
       else
-        @address
+        @delivery
       end
     else
     end
     @order.set_receiver(receiver)
-  end
-
-  def create
-    current_customer.orders.create(order_params)
-    redirect_to complete_orders_path
   end
 
   private
@@ -55,10 +74,6 @@ class Public::OrdersController < ApplicationController
 
   def address_params
     params.permit(:name,:address,:postal_code)
-  end
-
-  def check_cart_is_not_empty
-    redirect_to items_path unless current_customer.cart_items.present?
   end
 
 end

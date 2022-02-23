@@ -13,15 +13,15 @@
         </tr>
       </thead>
       <tbody>
-        <% @order.customer.items.each do |cart_item| %>
+        <% @order.customer.cart_items.each do |cart_item| %>
           <tr>
             <td class="align-middle">
-              <%= attachment_image_tag cart_item.item,:image,:fill, 60, 50 %>
+              <%= attachment_image_tag cart_item.item,:image,:fill, 50, 50 %>
               <%= cart_item.item.name %>
             </td class="align-middle">
             <td class="align-middle"><%= cart_item.item.with_tax_price.to_s(:delimited) %></td>
             <td class="align-middle"><%= cart_item.quantity %></td>
-            <td class="align-middle"><%= cart_item.sum_of_price.to_s(:delimited) %></td>
+            <td class="align-middle"><%= cart_item.subtotal.to_s(:delimited) %></td>
           </tr>
         <% end %>
       </tbody>
