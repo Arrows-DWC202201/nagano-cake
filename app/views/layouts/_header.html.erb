@@ -3,6 +3,7 @@
     <%= link_to root_path, class: "navbar-brand" do %><i class="fas fa-birthday-cake"></i>ながのCAKE<%end%>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
+        
         <!--会員がログインしているとき-->
         <% if customer_signed_in? %>
           <li>
