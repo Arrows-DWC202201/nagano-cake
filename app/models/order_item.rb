@@ -16,16 +16,13 @@ class OrderItem < ApplicationRecord
     (self.tax_price * self.quantity).round
   end
 
-  private
-
   def check_make_status
     if self.make_status == "making"
       self.order.update(order_status: "making")
     elsif self.make_status == "finish"
       if self.order.order_items.all? { |order_item| order_item.make_status == "finish" }
-        self.order.update(ordesr_status: "ready_to_ship")
+        self.order.update(order_status: "ready_to_ship")
       end
     end
   end
-
 end

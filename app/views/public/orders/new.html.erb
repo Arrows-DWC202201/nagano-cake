@@ -19,7 +19,7 @@
         <div class="col mt-3">
           <%= f.radio_button :address_type, 2, checked: @address_type == 2 %>
           <%= f.label :address_type, "登録済み住所", value: 2 %><br>
-          <div class="col"><%= f.select :address_id, current_customer.reload.addresses.map { |a| [a.full_addresses, a.id] } %></div>
+          <div class="col"><%= f.collection_select(:address_id, current_customer.addresses.all, :id, :address) %></div>
         </div>
 
         <div class="col mt-3">
@@ -41,7 +41,6 @@
           </div>
         </div>
         <div class="col-md-10 offset-md-4">
-          <!-- 注文詳細画面へ進む -->
           <%= f.submit "確認画面に進む", class:"btn btn-outline-primary" %>
         </div>
       </div>

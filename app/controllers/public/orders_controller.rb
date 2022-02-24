@@ -1,6 +1,6 @@
 class Public::OrdersController < ApplicationController
 
-  before_action :authenticate_customer!
+  # before_action :authenticate_customer!
 
   def new
     @order = current_customer.orders.new
@@ -37,12 +37,12 @@ class Public::OrdersController < ApplicationController
     when 2
       current_customer.addresses.find(params[:address_id])
     when 3
-      @delivery = current_customer.addresses.new(address_params)
-      unless @delivery.save
+      @address = current_customer.addresses.new(address_params)
+      unless @address.save
         render :new
         return
       else
-        @delivery
+        @address
       end
     else
     end

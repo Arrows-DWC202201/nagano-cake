@@ -29,7 +29,7 @@
       <%= form_with model:[:admin, @order], local: true do |f| %>
         <td>
           <div class="form-inline">
-            <%= f.collection_select(:status, Order.order_statuses_i18n, :first, :last, {selected: @order.order_status}, {class: "form-control"}) %>
+            <%= f.collection_select(:order_status, Order.order_statuses_i18n, :first, :last, {selected: @order.order_status}, {class: "form-control"}) %>
             <%= f.submit "更新", class:"btn btn-success ml-3" %>
           </div>
         </td>
@@ -58,7 +58,6 @@
               <td><%= order_items.quantity %></td>
               <td><%= order_items.subtotal %></td>
               <%= form_with model:[:admin, order_items], local: true do |f| %>
-              <!-- モデルをもとにセレクトボックスを生成-->
                 <td><%= f.collection_select(:make_status, OrderItem.make_statuses_i18n, :first, :last,  { selected: order_items.make_status }, {class: "form-control"})%></td>
                 <td><%= f.submit "更新",  class:"btn btn-success" %></td>
               <% end %>

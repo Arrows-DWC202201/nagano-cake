@@ -46,7 +46,7 @@ class Order < ApplicationRecord
 
   def check_order_item
     if self.order_status == "confirm_payment"
-      self.order_items.update_all(make_status: "wating")
+      self.order_items.update_all(make_status: "waiting")
     end
   end
 
