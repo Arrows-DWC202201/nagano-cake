@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+.homes, .items {
+  color: #2B1B17;
+  font-family: 'Noto Serif JP', serif;
+}
+
+.deco {
+  font-family: 'Kaisei Tokumin', cursive, sans-serif;
+}
+
+header {
+  font-family: 'Kaisei Tokumin', cursive, sans-serif;
+}
+
+.item-all-link {
+  color: #2B1B17;
+}
+
+.item-all-link:hover {
+	color: #FFD700;
+	text-decoration: none;
+}
+
+.header-link {
+  color: #2B1B17;
+}
+
+.header-link:hover {
+	color: #FFD700;
+	text-decoration: none;
+}
+
+#top {
+  background-image: url('main.jpg');
+  height: 300px;
+  background-size:cover;
+}
+
+.top-text {
+  text-shadow: 2px 2px 5px #FFFFFF;
+  font-weight: bold;
+}
+
+.fa-hand-point-right {
+  color: #FFD700;
+}
+
+.buy-btn {
+  background: #FFA500;
+  color: #FFFFFF;
+}
+
+.buy-btn:hover {
+  background: #FFD700;
+  color: #2B1B17;
+}
