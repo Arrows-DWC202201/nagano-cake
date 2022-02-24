@@ -19,7 +19,7 @@
         <%= form_with model: @cart_item, url: cart_items_path, method: :post, local: true do |f| %>
           <%= f.hidden_field :item_id, :value => @item.id %>
           <%= f.select :quantity, options_for_select((1..10).to_a), include_blank: "個数選択" %>
-          <%= f.submit "カートに入れる", class: "btn btn-success" %>
+          <%= f.submit "カートに入れる", class: "btn buy-btn" %>
         <% end %>
       <% else %>
         <div><%= @item.is_active_i18n %></div>

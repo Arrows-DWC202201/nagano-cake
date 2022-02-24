@@ -1,61 +1,61 @@
-<header class="shadow-sm">
-  <nav class="navbar navbar-expand-lg bg-light navbar-light">
+<header class="mb-5">
+  <nav class="navbar navbar-expand-lg navbar-light border-bottom border-secondary">
     <div class="container">
-      <a class="navbar-brand p-3" href="/"><i class="fas fa-birthday-cake"></i>ながのCAKE</a>
+      <a class="navbar-brand p-3" href="/"><%= image_tag "logo.png", :size => "185x40" %></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto d-flex align-items-center">
           <!--会員がログインしているとき-->
           <% if customer_signed_in? %>
             <li class="nav-item">
               ようこそ、<%= current_customer.last_name %>さん！
             </li>
-            <li class="nav-item">
-              <%= link_to "マイページ", customers_path(current_customer), class: 'nav-link text-dark' %>
+            <li class="nav-item mr-3">
+              <%= link_to customers_path(current_customer), class: 'header-link' do %><i class="fas fa-user"></i>マイページ<% end %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to items_path, class: 'header-link' do %><i class="fas fa-birthday-cake"></i>商品一覧<% end %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to cart_items_path, class: 'header-link' do %><i class="fas fa-shopping-cart"></i>カート<% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "商品一覧", items_path, class: 'nav-link text-dark' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "カート", cart_items_path, class: 'nav-link text-dark' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' %>
+              <%= link_to destroy_customer_session_path, method: :delete, class: 'header-link' do %><i class="fas fa-sign-out-alt"></i>ログアウト<% end %>
             </li>
 
           <!--管理者がログインしているとき-->
           <% elsif admin_signed_in? %>
-            <li class="nav-item">
-              <%= link_to "商品一覧", admin_items_path, class: 'nav-link text-dark' %>
+            <li class="nav-item mr-3">
+              <%= link_to "商品一覧", admin_items_path, class: 'header-link' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to "会員一覧", admin_customers_path, class: 'header-link' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to "注文履歴一覧", admin_root_path, class: 'header-link' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to "ジャンル一覧", admin_genres_path, class: 'header-link' %>
             </li>
             <li class="nav-item">
-              <%= link_to "会員一覧", admin_customers_path, class: 'nav-link text-dark' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "注文履歴一覧", admin_root_path, class: 'nav-link text-dark' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "ジャンル一覧", admin_genres_path, class: 'nav-link text-dark' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
+              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'header-link' %>
             </li>
 
           <!--ログインしていないとき-->
           <% else %>
-            <li class="nav-item">
-              <%= link_to "About", about_path, class: 'nav-link text-dark' %>
+            <li class="nav-item mr-3">
+              <%= link_to about_path, class: 'header-link' do %><i class="fas fa-map-pin"></i>About<% end %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to items_path, class: 'header-link' do %><i class="fas fa-birthday-cake"></i>商品一覧<% end %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to new_customer_registration_path, class: 'header-link' do %><i class="fas fa-user-plus"></i>新規登録<% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "商品一覧", items_path, class: 'nav-link text-dark' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "新規登録", new_customer_registration_path, class: 'nav-link text-dark' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "ログイン", new_customer_session_path, class: 'nav-link text-dark' %>
+              <%= link_to new_customer_session_path, class: 'header-link' do %><i class="fas fa-sign-in-alt"></i>ログイン<% end %>
             </li>
 
           <% end %>

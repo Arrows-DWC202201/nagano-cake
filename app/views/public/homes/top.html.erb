@@ -3,31 +3,35 @@
   <div class="row">
     <%= render "sidebar" %>
   </div>
-    <div id="top" class="col-sm-8 offset-sm-1" style="background-color :pink">
-      <p>ようこそ、ながのCAKEへ！</br>
-      このサイトは、ケーキ販売のECサイトになります。</br>
-      会員でない方も商品の閲覧はできますが、</br>
-      購入には会員登録が必要になります。</p>
+    <div id="top" class="col-sm-8 offset-sm-1 pt-4 mb-3">
+      <div>
+        <p class="top-text">ようこそ、ながのCAKEへ！</br>
+        このサイトは、ケーキ販売のECサイトになります。</br>
+        会員でない方も商品の閲覧はできますが、</br>
+        購入には会員登録が必要になります。</p>
+      </div>
     </div>
   </div>
 
   <div class="row offset-sm-3">
-    <h2>新着商品</h2>
+    <h2 class="deco"><i class="fas fa-hand-point-right"></i>新着商品</h2>
   </div>
   <div class="row offset-sm-3">
     <% @items.first(4).each do |item| %>
-      <%= link_to item_path(item) do %>
-        <div class="card w-50">
-        <%= attachment_image_tag item, :image, format: 'jpeg', size: "120x100" %><br>
-        <%= item.name %><br>
-        <%= item.price %>
+      <div class="card ml-1">
+        <%= link_to item_path(item) do %>
+          <%= attachment_image_tag item, :image, size: "200x150", class: "card" %>
+        <% end %>
+        <div class="card-body">
+          <div class="card-title"><%= item.name %></div>
+          <div>¥<%= item.with_tax_price.to_s(:delimited) %></div>
         </div>
-      <% end %>
+      </div>
     <% end %>
   </div>
 
-  <div class="row offset-sm-3">
-    <%= link_to "全ての商品を見る >", items_path, class: "ml-auto" %>
+  <div class="row offset-sm-3 mt-3">
+    <%= link_to "全ての商品を見る >", items_path, class: "item-all-link ml-auto" %>
   </div>
 
 </div>
