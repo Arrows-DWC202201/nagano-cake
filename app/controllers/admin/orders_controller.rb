@@ -1,7 +1,6 @@
 class Admin::OrdersController < ApplicationController
 
-  # before_action :authenticate_admin!
-  # 管理者ログイン/ログアウト作成後使用
+  before_action :authenticate_admin!
 
   def index
     # @orders = Order.all.order(created_at: :desc).page(params[:page]).per(10)

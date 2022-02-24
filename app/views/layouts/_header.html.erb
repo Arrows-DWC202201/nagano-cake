@@ -9,8 +9,8 @@
         <ul class="navbar-nav ml-auto d-flex align-items-center">
           <!--会員がログインしているとき-->
           <% if customer_signed_in? %>
-            <li class="nav-item mr-3">
-              ようこそ、<%= current_customer.last_name %>さん！!
+            <li class="nav-item">
+              ようこそ、<%= current_customer.last_name %>さん！
             </li>
             <li class="nav-item mr-3">
               <%= link_to customers_path(current_customer), class: 'header-link' do %><i class="fas fa-user"></i>マイページ<% end %>
