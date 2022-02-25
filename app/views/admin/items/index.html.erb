@@ -1,11 +1,9 @@
-<div class="row offset-2">
+<div class="container">
   <h3>商品一覧</h3>
-
-  <div class="offset-6 col-1">
+  <div class=" col-1 offset-10 mb-3">
     <%= link_to new_admin_item_path, class: "shadow-sm btn btn-light border-secondary", style: "border-radius:100px;" do %>
       <i class="fas fa-plus"></i>
     <% end %>
   </div>
+  <%= render "index", items: @items %>
 </div>
-
-<%= render "index", items: @items %>
