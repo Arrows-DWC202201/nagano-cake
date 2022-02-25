@@ -32,6 +32,12 @@ ____________________________________________________________________________<br>
 ____________________________________________________________________________<br>
 
 [設計]<br>
+<img width="427" alt="スクリーンショット 2022-02-25 12 23 44" src="https://user-images.githubusercontent.com/96915278/155648137-f50e0693-780c-42a0-aa87-4a3a0acb144e.png">
+<img width="1117" alt="スクリーンショット 2022-02-25 12 24 28" src="https://user-images.githubusercontent.com/96915278/155648163-9e29b5a8-5084-4387-9bec-681a68930365.png">
+<img width="1115" alt="スクリーンショット 2022-02-25 12 24 56" src="https://user-images.githubusercontent.com/96915278/155648205-aa96d2cc-014a-490f-a7f8-e2b14bbe281a.png">
+<img width="1116" alt="スクリーンショット 2022-02-25 12 25 17" src="https://user-images.githubusercontent.com/96915278/155648260-c384bc49-c989-4089-9481-bdd0f7c7b8fb.png">
+<img width="1115" alt="スクリーンショット 2022-02-25 12 25 35" src="https://user-images.githubusercontent.com/96915278/155648294-4aee69ec-317c-4364-a52f-05686b10d0d6.png">
+<img width="1116" alt="スクリーンショット 2022-02-25 12 25 49" src="https://user-images.githubusercontent.com/96915278/155648311-842a6cd3-5172-43e8-87cf-491a678e5a7e.png">
 <img width="1004" alt="スクリーンショット 2022-02-25 12 07 22" src="https://user-images.githubusercontent.com/95997394/155646455-ba6e0227-0687-493a-b0ca-258fc3a40538.png">
 <img width="540" alt="スクリーンショット 2022-02-25 12 15 58" src="https://user-images.githubusercontent.com/95997394/155647142-553d1031-2f1f-4edb-a8fe-5a10cabd260f.png">
 <img width="536" alt="スクリーンショット 2022-02-25 12 16 21" src="https://user-images.githubusercontent.com/95997394/155647160-8524f5af-27ad-4288-8ce2-1025712416cb.png"><br>
