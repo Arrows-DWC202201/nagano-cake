@@ -33,10 +33,11 @@ ____________________________________________________________________________<br>
 
 [設計]<br>
 ・ER図<br>
-<img width="1004" alt="スクリーンショット 2022-02-25 12 07 22" src="https://user-images.githubusercontent.com/95997394/155646455-ba6e0227-0687-493a-b0ca-258fc3a40538.png">
-・詳細設計（会員側）
+<img width="1004" alt="スクリーンショット 2022-02-25 12 07 22" src="https://user-images.githubusercontent.com/95997394/155646455-ba6e0227-0687-493a-b0ca-258fc3a40538.png"><br>
+・詳細設計（会員側）<br>
 <img width="540" alt="スクリーンショット 2022-02-25 12 15 58" src="https://user-images.githubusercontent.com/95997394/155647142-553d1031-2f1f-4edb-a8fe-5a10cabd260f.png">
-・詳細設計（管理者側）
+<br>
+・詳細設計（管理者側）<br>
 <img width="536" alt="スクリーンショット 2022-02-25 12 16 21" src="https://user-images.githubusercontent.com/95997394/155647160-8524f5af-27ad-4288-8ce2-1025712416cb.png"><br>
 ・テーブル定義書<br>
 <img width="427" alt="スクリーンショット 2022-02-25 12 23 44" src="https://user-images.githubusercontent.com/96915278/155648137-f50e0693-780c-42a0-aa87-4a3a0acb144e.png">
