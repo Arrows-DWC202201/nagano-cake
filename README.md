@@ -32,8 +32,8 @@ ____________________________________________________________________________<br>
 
 [設計]<br>
 <img width="1004" alt="スクリーンショット 2022-02-25 12 07 22" src="https://user-images.githubusercontent.com/95997394/155646455-ba6e0227-0687-493a-b0ca-258fc3a40538.png">
-[詳細設計 - 管理者側ルーティング.pdf](https://github.com/Arrows-DWC202201/nagano-cake/files/8138164/-.pdf)
-[詳細設計 - 顧客側側ルーティング.pdf](https://github.com/Arrows-DWC202201/nagano-cake/files/8138165/-.pdf)
+<img width="540" alt="スクリーンショット 2022-02-25 12 15 58" src="https://user-images.githubusercontent.com/95997394/155647142-553d1031-2f1f-4edb-a8fe-5a10cabd260f.png">
+<img width="536" alt="スクリーンショット 2022-02-25 12 16 21" src="https://user-images.githubusercontent.com/95997394/155647160-8524f5af-27ad-4288-8ce2-1025712416cb.png">
 ・ER図<br>
 ・テーブル定義書１<br>
 ・テーブル定義書２<br>
