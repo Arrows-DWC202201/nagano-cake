@@ -1,0 +1,26 @@
+<div class="row">
+  <table class="table table-bordered mr-auto mb-2">
+    <thead>
+      <tr scope="row" class="bg-light">
+        <th>商品ID</th>
+        <th>商品名</th>
+        <th>税抜価格</th>
+        <th>ジャンル</th>
+        <th>ステータス</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% items.each do |item| %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= link_to item.name, admin_item_path(item.id), class: "text-dark", style: "text-decoration: underline" %></td>
+        <td><%= item.with_tax_price.to_s(:delimited) %></td>
+        <td><%= item.genre.name %></td>
+        <td><%= item.is_active_i18n %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<%= paginate items %>
+</div>

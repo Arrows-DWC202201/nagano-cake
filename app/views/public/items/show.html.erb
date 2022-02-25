@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div class="row">
+    <%= render "public/homes/sidebar" %>
+  </div>
+
+  <div class="col-sm-8 offset-sm-1">
+    <div>
+      <%= attachment_image_tag @item, :image, format: 'jpeg', size: "300x300" %>
+    </div>
+    <p><%= @item.name %></p>
+    <p><%= @item.introduction %></p>
+    <p>¥<%= @item.with_tax_price.to_s(:delimited) %>(税込)</p>
+
+    <div>
+    <% if customer_signed_in? %>
+      <% if @item.is_active? %>
+
+        <%= form_with model: @cart_item, url: cart_items_path, method: :post, local: true do |f| %>
+          <%= f.hidden_field :item_id, :value => @item.id %>
+          <%= f.select :quantity, options_for_select((1..10).to_a), include_blank: "個数選択" %>
+          <%= f.submit "カートに入れる", class: "btn buy-btn" %>
+        <% end %>
+      <% else %>
+        <div><%= @item.is_active_i18n %></div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>

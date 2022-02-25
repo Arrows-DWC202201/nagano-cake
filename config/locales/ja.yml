@@ -1,0 +1,51 @@
+  #ja: 日本語の設定を行う
+    #enums: enumの設定を行う
+      #[モデル名]:
+        #[カラム名]:
+          #[enumで番号と紐付けた要素]
+          #[enumで番号と紐付けた要素]: 要素の数だけ追加する
+
+  ja:
+    enums:
+      order:
+        payment_method:
+          credit_card: "クレジットカード"
+          transfer: "銀行振込"
+
+        order_status:
+          wating_payment: "入金待ち"
+          confirm_payment:  "入金確認"
+          making:             "製作中"
+          ready_to_ship:      "発送準備中"
+          sent:               "発送済"
+
+      item:
+        is_active:
+          sale: "販売中"
+          sold: "販売停止中"
+
+      customer:
+        is_active:
+          active: "有効"
+          out: "退会"
+
+      order_item:
+        make_status:
+          impossible: "着手不可"
+          waiting: "製作待ち"
+          making: "製作中"
+          finish: "製作完了"
+
+  #activerecord:
+    #models:
+      #customer: "お客様情報"
+    #attributes:
+      #customer:
+        #last_name: "苗字"
+        #first_name: "名前"
+        #last_name_kana: "苗字(カナ)"
+        #first_name_kana: "名前(カナ)"
+        #postal_code: "郵便番号"
+        #address: "住所"
+        #phone_numder: "電話番号"
+        #email: "メールアドレス"
